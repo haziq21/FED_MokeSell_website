@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>MokeSell</title>
+
+    <style id="cat-styles"></style>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://mokesell-996a.restdb.io/rest/_jsapi.js?plainjs=true"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="assets/logo.png" alt="MokeSell logo" class="navbar__logo">
+        <input type="text" placeholder="Search MokeSell" class="textbox textbox--search">
+        <a href="#" class="navbar__btn">Sign up</a>
+        <a href="#" class="navbar__btn">Log in</a>
+
+        <div class="category-selector">
+            <ul class="categories">
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Home Appliances</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Beauty & Health</a></li>
+                <li><a href="#">Automotive</a></li>
+                <li><a href="#">Furniture</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Mobile Phones</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Laptops</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Tablets</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Cameras</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Headphones</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Smart Watches</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Refrigerators</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Washing Machines</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Microwaves</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Air Conditioners</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Vacuum Cleaners</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Water Heaters</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Men's Clothing</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Women's Clothing</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Kid's Clothing</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Footwear</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Accessories</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Jewelry</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Fiction</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Non-Fiction</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Children's Books</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Educational</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Comics</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Magazines</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Fitness Equipment</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Outdoor Gear</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Sportswear</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Footwear</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Accessories</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Nutrition</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Skincare</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Haircare</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Makeup</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Fragrances</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Personal Care</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Health Supplements</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Car Accessories</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Motorcycle Accessories</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Car Electronics</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Car Care</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Motorcycle Gear</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Tools & Equipment</a></li>
+            </ul>
+
+            <ul class="subcategories">
+                <li><a href="#"><img src="assets/logo.png" alt="">Living Room</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Bedroom</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Office</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Outdoor</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Storage</a></li>
+                <li><a href="#"><img src="assets/logo.png" alt="">Decor</a></li>
+            </ul>
+
+            <script>
+                // Construct CSS rules to style subcategories
+                document.querySelectorAll('.categories li').forEach((_, n) => {
+                    document.getElementById('cat-styles').textContent +=
+                        `.categories:has(li:nth-of-type(${n + 1}):hover) ~ ul.subcategories:nth-of-type(${n + 2}),
+                         ul.subcategories:nth-of-type(${n + 2}):hover { display: flex; }`;
+                })
+            </script>
+        </div>
+    </nav>
+</body>
+
+</html>
