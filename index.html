@@ -33,6 +33,13 @@
             </div>
         </template>
 
+        <template x-data="user" x-if="loggedIn !== null && loggedIn">
+            <div class="display-contents">
+                <a href="new-listing" class="navbar__btn">Create listing</a>
+                <img src="assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
+            </div>
+        </template>
+
         <div class="category-selector">
             <ul class="categories">
                 <li><a href="#">Electronics</a></li>
