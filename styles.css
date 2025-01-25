@@ -1,0 +1,23 @@
+.section-header {
+  font-size: var(--font-xl);
+  font-weight: 500;
+  margin: 3.5rem 0 0 5.5rem;
+}
+
+.listings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem 5.5rem 0 5.5rem;
+}
+
+.listing {
+  display: grid;
+  grid: repeat(5, auto) / repeat(3, min-content);
+}
+
+.listing__pfp {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 1.5rem;
+  margin-left: 1rem;
+}

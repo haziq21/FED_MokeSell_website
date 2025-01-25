@@ -4,28 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MokeSell</title>
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared/reset.css">
+    <link rel="stylesheet" href="shared/base.css">
+    <link rel="stylesheet" href="shared/navbar.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <title>MokeSell</title>
 
     <style id="cat-styles"></style>
-    <script src="https://unpkg.com/alpinejs" defer></script>
-    <script src="https://mokesell-996a.restdb.io/rest/_jsapi.js?plainjs=true"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
     <nav class="navbar">
         <img src="assets/logo.png" alt="MokeSell logo" class="navbar__logo">
         <input type="text" placeholder="Search MokeSell" class="textbox textbox--search">
-        <a href="#" class="navbar__btn">Sign up</a>
-        <a href="#" class="navbar__btn">Log in</a>
+
+        <template x-data="user" x-if="loggedIn !== null && !loggedIn">
+            <div class="display-contents"> <!-- <template> can only contain one root element -->
+                <a href="signup" class="navbar__btn">Sign up</a>
+                <a href="login" class="navbar__btn">Log in</a>
+            </div>
+        </template>
 
         <div class="category-selector">
             <ul class="categories">
@@ -121,6 +127,22 @@
             </script>
         </div>
     </nav>
+
+    <h1 class="section-header">Recent listings</h1>
+
+    <!-- <ul class="listings" x-data="{ listings: [] }" x-init="listings = await getListings()">
+        <template x-for="l in listings">
+            <li class="listing">
+                <img :src="`https://mokesell-996a.restdb.io/media/${l.images[0]}`" alt="Profile picture"
+                    class="listing__pfp">
+                <span x-text="l.listedBy[0].name"></span>
+                <img :src="`https://mokesell-996a.restdb.io/media/${l.images[0]}`" alt="">
+                <span x-text="l.description"></span>
+                <span x-text="l.condition"></span>
+                <span x-text="`S\$${l.price}`"></span>
+            </li>
+        </template>
+    </ul> -->
 </body>
 
 </html>

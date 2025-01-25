@@ -1,11 +1,12 @@
-const API_KEY = "6790a1c7581747effe5315e9";
-var db = new restdb(API_KEY, {});
+import { supabase } from "./shared/client.js";
+import Alpine from "./shared/alpine.min.js";
 
-new db.listings.find({}, {}, (err, res) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
+Alpine.data("user", () => ({
+  loggedIn: null,
 
-  console.log(res);
-});
+  async init() {
+    this.loggedIn = (await supabase.auth.getSession()).data.session !== null;
+  },
+}));
+
+Alpine.start();
