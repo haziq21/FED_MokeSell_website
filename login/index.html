@@ -16,14 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
-    <script src="../shared/login-signup.js" type="module"></script>
+    <script src="script.js" type="module"></script>
 </head>
 
 <body>
     <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="corner-logo"></a>
     <h1 class="header">Log in to MokeSell</h1>
 
-    <form x-data="registration" @submit.prevent="logInUser">
+    <form x-data="login" @submit.prevent="logInUser">
         <label for="email" class="label">Email</label>
         <input type="email" id="email" required x-model="email" class="textbox textbox--form">
 
