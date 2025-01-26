@@ -5,6 +5,10 @@
   margin: 10rem 0 4rem 0;
 }
 
+.header--tighter {
+  margin-top: 7rem;
+}
+
 .label {
   display: block;
   font-size: var(--font-md);

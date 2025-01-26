@@ -1,12 +1,12 @@
-import { supabase } from "./client.js";
-import Alpine from "./alpine.min.js";
+import { supabase } from "../shared/client.js";
+import Alpine from "../shared/alpine.min.js";
 
 Alpine.data("login", () => ({
   email: "",
   password: "",
 
   async logInUser() {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email: this.email,
       password: this.password,
     });

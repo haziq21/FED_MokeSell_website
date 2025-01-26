@@ -21,9 +21,12 @@
 
 <body>
     <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="corner-logo"></a>
-    <h1 class="header">Sign up for MokeSell</h1>
+    <h1 class="header header--tighter">Sign up for MokeSell</h1>
 
     <form x-data="signup" @submit.prevent="signUpNewUser">
+        <label for="username" class="label">Username</label>
+        <input type="text" id="username" required x-model="username" class="textbox textbox--form">
+
         <label for="email" class="label">Email</label>
         <input type="email" id="email" required x-model="email" class="textbox textbox--form">
 
