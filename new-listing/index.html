@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="../shared/reset.css">
     <link rel="stylesheet" href="../shared/base.css">
-    <link rel="stylesheet" href="../new-listing/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,24 +24,45 @@
             <img src="../assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
         </div>
     </nav>
-    <div class="listing__images">
-        <input type="image" class="listing__thumbnail">
-        <input type="image" class="listing__product__images">
-    </div>
 
-    <div class="product__info__input">
-        <label for="product__name">Product Name</label>
-        <input type="text" id="product__name">
-        <div class="product__variables">
-            <div class="condition">
-                <label>Product condition</label>
-                <button>New</button><button>Like new</button><button>Lightly used</button><button>Heavily used</button>
-            </div>
-            <div class="price">
-                <input type="number">
-            </div>
+    <form>
+        <div class="listing-images">
+            <input id="thumbnail" type="file" accept="image/*" hidden>
+            <label for="thumbnail" class="thumbnail-input"></label>
+            <input id="product-images" type="file" accept="image/*" multiple hidden>
+            <label for="product-images" class="product-images-input"></label>
         </div>
-    </div>
+
+        <div class="product-info-inputs">
+            <label for="product-name" class="label">Product name</label>
+            <input type="text" id="product-name">
+
+            <div class="product-variables">
+                <fieldset class="conditions">
+                    <legend class="label">Product condition</legend>
+
+                    <input type="radio" name="condition" id="new" class="condition-input" value="New" />
+                    <label for="new" class="condition-text">New</label>
+
+                    <input type="radio" name="condition" id="like-new" class="condition-input" value="Like new" />
+                    <label for="like-new" class="condition-text">Like new</label>
+
+                    <input type="radio" name="condition" id="lightly-used" class="condition-input"
+                        value="Lightly used" />
+                    <label for="lightly-used" class="condition-text">Lightly used</label>
+
+                    <input type="radio" name="condition" id="heavily-used" class="condition-input"
+                        value="Heavily used" />
+                    <label for="heavily-used" class="condition-text">Heavily used</label>
+                </fieldset>
+
+                <div class="price">
+                    <input type="number">
+                </div>
+            </div>
+
+        </div>
+    </form>
 </body>
 
 </html>
