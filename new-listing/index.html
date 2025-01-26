@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create listing</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="../shared/reset.css">
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="../new-listing/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="navbar__logo"></a>
+        <div class="display-contents">
+            <img src="../assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
+        </div>
+    </nav>
+    <div class="listing__images">
+        <input type="image" class="listing__thumbnail">
+        <input type="image" class="listing__product__images">
+    </div>
+
+    <div class="product__info__input">
+        <label for="product__name">Product Name</label>
+        <input type="text" id="product__name">
+        <div class="product__variables">
+            <div class="condition">
+                <label>Product condition</label>
+                <button>New</button><button>Like new</button><button>Lightly used</button><button>Heavily used</button>
+            </div>
+            <div class="price">
+                <input type="number">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
