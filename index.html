@@ -41,6 +41,7 @@
         </template>
 
         <div class="category-selector">
+            <!-- TODO: Populate this from the database -->
             <ul class="categories">
                 <li><a href="#">Electronics</a></li>
                 <li><a href="#">Home Appliances</a></li>
@@ -124,6 +125,7 @@
                 <li><a href="#"><img src="assets/logo.png" alt="">Decor</a></li>
             </ul>
 
+            <!-- TODO: Perhaps there's a cleaner solution -->
             <script>
                 // Construct CSS rules to style subcategories
                 document.querySelectorAll('.categories li').forEach((_, n) => {
@@ -142,7 +144,7 @@
             <li class="listing">
                 <img src="assets/default-pfp.jpg" alt="Profile picture" class="listing__pfp">
                 <span x-text="l.users.username" class="listing__username"></span>
-                <span class="listing__age">3 days ago</span>
+                <span class="listing__age">3 days ago</span> <!-- TODO: Calculate this from data -->
                 <img :src="l.thumbnail" alt="" class="listing__thumbnail">
                 <span x-text="l.description" class="listing__description"></span>
                 <span x-text="l.condition" class="listing__condition"></span>
