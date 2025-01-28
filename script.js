@@ -15,7 +15,7 @@ Alpine.data("listings", () => ({
   async init() {
     const { data, error } = await supabase.from("listings").select(`
       id,
-      description,
+      name,
       price,
       condition,
       thumbnail_path,

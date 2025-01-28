@@ -12,43 +12,23 @@ async function getUserID() {
 }
 
 Alpine.data("newListing", () => ({
-  description: "",
-  price: 0,
-  condition: "",
-  /** `File` object from the file input. */
-  thumbnailFile: null,
-  /** URL created by `URL.createObjectURL()`. */
-  thumbnailLocalUrl: null,
-  /** Storage path in the images bucket on Supabase. */
-  thumbnailStoragePath: null,
+  thumbnailUrl: null,
+  productImageUrls: [],
 
   async handleThumbnailChange(event) {
-    const file = event.target.files[0];
-    this.thumbnailFile = file;
-    this.thumbnailLocalUrl = URL.createObjectURL(file);
-
-    // Retrieve the current session to get the user's ID
-    const { userId, error } = await getUserID();
-    if (error) {
-      console.error(error);
-      alert("You must be signed in to upload images. Check the console for errors.");
-      return;
-    }
-
-    // Construct the filepath for the thumbnail and upload it
-    const fileExt = file.name.split(".").at(-1);
-    this.thumbnailStoragePath = `${userId}/${crypto.randomUUID()}/thumbnail.${fileExt}`;
-    const { error: storageError } = await supabase.storage.from("images").upload(this.thumbnailStoragePath, file);
-
-    if (storageError) {
-      console.error(storageError);
-      alert("Oops, something went wrong. Check the console for errors.");
-    }
+    this.thumbnailUrl = URL.createObjectURL(event.target.files[0]);
   },
 
-  async handleProductImagesChange(event) {},
+  async handleProductImagesChange(event) {
+    this.productImageUrls = event.target.files.map((file) => URL.createObjectURL(file));
+  },
 
-  async createListing() {
+  /**
+   * Create a new listing in the database.
+   * @param {SubmitEvent} event
+   * @returns {Promise<void>}
+   */
+  async createListing(event) {
     // Retrieve the current session to get the user's ID
     const { userId, error: sessionError } = await getUserID();
     if (sessionError) {
@@ -57,17 +37,37 @@ Alpine.data("newListing", () => ({
       return;
     }
 
+    const formData = new FormData(event.target);
+
+    // Upload the thumbnail and product images concurrently
+    const files = [formData.get("thumbnail"), ...formData.getAll("images")];
+    const storageResults = await Promise.all(
+      files.map(async (file) => {
+        const ext = file.name.split(".").at(-1);
+        const path = `${userId}/${crypto.randomUUID()}.${ext}`;
+        return await supabase.storage.from("images").upload(path, file);
+      })
+    );
+
+    // Check for errors in any of the image uploads
+    if (storageResults.some((res) => res.error)) {
+      console.error(storageResults);
+      alert("Oops, something went wrong. Check the console for errors.");
+    }
+
     // Upload the listing information
-    const { error: listingsInsertError } = await supabase.from("listings").insert({
-      description: this.description,
-      price: this.price,
-      condition: this.condition,
+    const { error } = await supabase.from("listings").insert({
+      description: formData.get("description"),
+      price: formData.get("price"),
+      condition: formData.get("condition"),
       listed_by: userId,
-      thumbnail_path: this.thumbnailStoragePath,
+      thumbnail_path: storageResults[0].data.path,
+      image_paths: storageResults.slice(1).map((res) => res.data.path),
     });
 
-    if (listingsInsertError) {
-      console.error(sessionError);
+    // Check for errors in the listing upload
+    if (error) {
+      console.error(error);
       alert("Oops, something went wrong. Check the console for errors.");
       return;
     }
