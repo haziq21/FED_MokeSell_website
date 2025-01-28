@@ -26,7 +26,7 @@ This is a simple e-commerce website for a front-end development assignment.
 | Item                                                         | Person          | Done               |
 | ------------------------------------------------------------ | --------------- | ------------------ |
 | **Complete basic (no Alpine) "New listing" desktop UI as per Figma.** <br />Use `<input type="submit">` for the "post listing" button. | Koh Hau         |                    |
-| **Complete `handleProductImagesChange(event)` for "New listing" page.**<br />Push generated object URLs into `productImageLocalURLs`. Upload images to Supabase and push paths to `productImageStoragePaths` | Haziq           |                    |
+| **Complete `handleProductImagesChange(event)` for "New listing" page.**<br />Push generated object URLs into `productImageLocalURLs`. Upload images to Supabase and push paths to `productImageStoragePaths` | Haziq           | :white_check_mark: |
 | **Connect "New listing" UI to JS via Alpine.**<br />Use `<form x-data="newListing" @submit="createListing">`, with `@change="handleThumbnailChange"` and `@change="handleProductImagesChange"` (implemented in script.js) on the relevant input elements. | Haziq / Koh Hau |                    |
 | **Implement `smallnav` CSS class used by "New listing" and "Your listings" pages.**<br />Use flexbox. | Haziq           | :white_check_mark: |
 | **Complete basic "Your listings" desktop UI as per Figma.**  | Koh Hau         |                    |
