@@ -3,14 +3,14 @@ import Alpine from "../shared/alpine.min.js";
 
 Alpine.data("newListing", () => ({
   thumbnailUrl: null,
-  productImageUrls: [],
+  imageUrls: [],
 
   async handleThumbnailChange(event) {
     this.thumbnailUrl = URL.createObjectURL(event.target.files[0]);
   },
 
-  async handleProductImagesChange(event) {
-    this.productImageUrls = event.target.files.map((file) => URL.createObjectURL(file));
+  async handleImagesChange(event) {
+    this.imageUrls = event.target.files.map((file) => URL.createObjectURL(file));
   },
 
   /**
@@ -18,7 +18,7 @@ Alpine.data("newListing", () => ({
    * @param {SubmitEvent} event
    * @returns {Promise<void>}
    */
-  async createListing(event) {
+  async submitListing(event) {
     // Retrieve the current session to get the user's ID
     const { userId, error: sessionError } = await getUserID();
     if (sessionError) {
@@ -47,6 +47,7 @@ Alpine.data("newListing", () => ({
 
     // Upload the listing information
     const { error } = await supabase.from("listings").insert({
+      name: formData.get("name"),
       description: formData.get("description"),
       price: formData.get("price"),
       condition: formData.get("condition"),
@@ -66,3 +67,5 @@ Alpine.data("newListing", () => ({
     window.location.href = "../my-listings";
   },
 }));
+
+Alpine.start();
