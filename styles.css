@@ -2,6 +2,7 @@
   font-size: var(--font-xl);
   font-weight: 500;
   margin: 3.5rem 0 0 5.5rem;
+  width: fit-content;
 }
 
 .listings {
@@ -9,6 +10,7 @@
   grid-template-columns: repeat(4, minmax(15rem, 18rem));
   margin: 2rem 5.5rem 10rem 5.5rem;
   gap: 3rem 2rem;
+  width: fit-content;
 }
 
 .listing {
@@ -67,4 +69,9 @@
   font-weight: 500;
   text-align: right;
   margin-right: 0.5rem;
+}
+
+.content {
+  width: fit-content;
+  margin: auto;
 }
