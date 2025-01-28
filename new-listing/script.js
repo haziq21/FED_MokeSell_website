@@ -1,15 +1,5 @@
-import { supabase } from "../shared/client.js";
+import { supabase, getUserID } from "../shared/client.js";
 import Alpine from "../shared/alpine.min.js";
-
-/**
- * Retrieve the user's ID from the current session.
- * @returns {Promise<{userId: string, error: null} | {userId: null, error: object}>}
- */
-async function getUserID() {
-  const { data, error } = await supabase.auth.getSession();
-  const userId = data.session?.user.id ?? null;
-  return { userId, error };
-}
 
 Alpine.data("newListing", () => ({
   thumbnailUrl: null,
