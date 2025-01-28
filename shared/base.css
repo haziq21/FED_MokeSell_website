@@ -43,13 +43,6 @@ label {
   color: var(--grey-4);
 }
 
-.corner-logo {
-  width: 100%;
-  max-width: 3rem;
-  margin-top: 1.5rem;
-  margin-left: 1.5rem;
-}
-
 .display-contents {
   display: contents;
 }

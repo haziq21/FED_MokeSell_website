@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../shared/reset.css">
     <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="../shared/smallnav.css">
     <link rel="stylesheet" href="../shared/login-signup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,10 @@
 </head>
 
 <body>
-    <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="corner-logo"></a>
+    <nav class="smallnav">
+        <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="smallnav__logo"></a>
+    </nav>
+
     <h1 class="header">Log in to MokeSell</h1>
 
     <form x-data="login" @submit.prevent="logInUser">
