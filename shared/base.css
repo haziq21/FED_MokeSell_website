@@ -46,3 +46,8 @@ label {
 .display-contents {
   display: contents;
 }
+
+textarea:focus,
+input:focus {
+  outline: 1px solid var(--grey-5)
+}

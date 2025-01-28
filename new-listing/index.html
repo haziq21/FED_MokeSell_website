@@ -57,10 +57,20 @@
                 </fieldset>
 
                 <div class="price">
-                    <input type="number">
+                    <label for="price" class="label">Asking price</label>
+                    <div class="input-box">
+                        <span id="dollar">$</span>
+                        <span><input type="number" name="price" class="price-input-form" id="price"></span>
+                    </div>
                 </div>
             </div>
-
+            <textarea name="description"></textarea>
+            <div class="submission">
+                <a href="..">
+                    <p>Discard Listing</p>
+                </a>
+                <input type="submit" class="submit-button" value="Post Listing">
+            </div>
         </div>
     </form>
 </body>

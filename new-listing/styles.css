@@ -28,6 +28,7 @@
   margin-right: 25%;
   width: 50%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #product-name {
@@ -38,14 +39,16 @@
 }
 
 .label {
+  display: block;
   font-size: var(--font-md);
   margin-left: 1rem;
   margin-bottom: 0.5rem;
-  width: 100%;
 }
 
 .product-variables {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .conditions {
@@ -66,16 +69,75 @@
   border: 2px solid var(--grey-2);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  margin-right: 1rem;
   font-size: var(--font-lg);
   color: var(--grey-5);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
-.condition-input:focus + .condition-text {
+.condition-input:focus+.condition-text {
   outline: 2px solid black;
 }
 
-.condition-input:checked + .condition-text {
+.condition-input:checked+.condition-text {
   background-color: var(--grey-1);
   color: var(--grey-7);
+}
+
+.price {
+  width: fit-content;
+  margin-top: 1.5rem;
+}
+
+.price .input-box {
+  display: flex;
+  background-color: var(--grey-1);
+  height: fit-content;
+  width: 9rem;
+  border-radius: 8px;
+}
+
+.price .input-box input {
+  font-size: var(--font-lg);
+  padding: 0.5rem 1rem;
+  width: 90%
+}
+
+#dollar {
+  align-self: center;
+  margin-left: 1rem;
+  font-size: var(--font-lg);
+  color: var(--grey-7);
+}
+
+.price .label {
+  display: flex;
+  justify-content: right;
+  margin-right: 0.5rem;
+}
+
+
+
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--grey-1);
+  min-height: 10rem;
+}
+
+.submission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 80%;
+  gap: 6rem;
+}
+
+.submit-button {
+  width: 10rem;
+  height: 2.5rem;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
 }
