@@ -47,7 +47,7 @@
   max-width: 18rem;
 }
 
-.listing__description {
+.listing__name {
   grid-column: 1 / 4;
   margin: 0.75rem 0.5rem -0.2rem 0.5rem;
   color: var(--grey-7);
