@@ -14,15 +14,18 @@ Alpine.data("listings", () => ({
   listings: [],
 
   async init() {
-    const { data, error } = await supabase.from("listings").select(`
-      id,
-      name,
-      price,
-      condition,
-      listed_at,
-      thumbnail_path,
-      users (id, username)
-    `);
+    const { data, error } = await supabase
+      .from("listings")
+      .select(
+        `id,
+         name,
+         price,
+         condition,
+         listed_at,
+         thumbnail_path,
+         users (id, username)`
+      )
+      .order("listed_at", { ascending: false });
 
     if (error) {
       console.error(error);
