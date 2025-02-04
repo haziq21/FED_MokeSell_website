@@ -170,6 +170,42 @@
   margin-right: 0.5rem;
 }
 
+.select-cat {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.select-cat div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.select-cat label {
+  margin-left: 3rem;
+}
+
+#categories {
+  display: flex;
+  text-align: center;
+  width: 80%;
+  border: 0px;
+  border-radius: 8px;
+  background-color: var(--grey-1);
+  margin: 0 10%;
+}
+
+#subcategories {
+  text-align: center;
+  width: 80%;
+  border: 0px;
+  border-radius: 8px;
+  background-color: var(--grey-1);
+  margin: 0 10%;
+}
 
 
 textarea {
