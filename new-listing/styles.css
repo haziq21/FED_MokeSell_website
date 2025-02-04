@@ -177,6 +177,7 @@ textarea {
   border-radius: 8px;
   background-color: var(--grey-1);
   min-height: 10rem;
+  padding: 1rem 1rem;
 }
 
 .submission {
