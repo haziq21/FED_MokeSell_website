@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your listings | MokeSell</title>
+    <title>My listings | MokeSell</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="../shared/reset.css">
@@ -16,14 +16,29 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="script.js" type="module"></script>
 </head>
 
 <body>
     <nav class="smallnav">
         <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="smallnav__logo"></a>
-        <h1 class="smallnav__header">Your listings</h1>
+        <h1 class="smallnav__header">My listings</h1>
         <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp">
     </nav>
+
+    <ul>
+        <template x-data="myListings" x-for="l in listings">
+            <li>
+                <img :src="l.thumbnail" alt="Listing thumbnail">
+                <span x-text="l.imageCount"></span>
+                <span x-text="l.name"></span>
+                <span x-text="l.age"></span>
+                <span x-text="l.condition"></span>
+                <span x-text="l.price"></span>
+            </li>
+        </template>
+    </ul>
 </body>
 
 </html>

@@ -16,6 +16,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="script.js" type="module"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp">
     </nav>
 
-    <form>
+    <form x-data="newListing" @submit.prevent="submitListing">
         <div class="listing-images">
             <input id="thumbnail" type="file" accept="image/*" hidden>
             <label for="thumbnail" class="thumbnail-input">
@@ -47,14 +49,14 @@
 
         <div class="product-info-inputs">
             <label for="product-name" class="label">Product name</label>
-            <input type="text" id="product-name">
+            <input type="text" id="product-name" name="name">
 
             <div class="product-variables">
                 <fieldset class="conditions">
                     <legend class="label">Product condition</legend>
 
-                    <input type="radio" name="condition" id="new" class="condition-input" value="New" />
-                    <label for="new" class="condition-text">New</label>
+                    <input type="radio" name="condition" id="new" class="condition-input" value="Brand new" />
+                    <label for="new" class="condition-text">Brand new</label>
 
                     <input type="radio" name="condition" id="like-new" class="condition-input" value="Like new" />
                     <label for="like-new" class="condition-text">Like new</label>
