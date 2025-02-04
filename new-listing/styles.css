@@ -2,21 +2,36 @@
   display: flex;
   width: 100%;
   max-height: 12rem;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
-  margin: 3rem 0;
+  margin: 4rem 0;
+}
+
+.thumbnail-group {
+  margin-left: 17%;
+}
+
+.product-group {
+  margin-right: 17%;
+}
+
+.label-text {
+  margin-left: 1rem;
 }
 
 .thumbnail-input {
   display: flex;
   width: 12rem;
   height: 12rem;
-  margin-left: 17%;
   background-color: var(--grey-1);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 8px;
+  border: 2px dotted var(--grey-5)
 }
+
+
 
 .add-image-image-container {
   display: flex;
@@ -39,11 +54,12 @@
   display: flex;
   width: 36rem;
   height: 12rem;
-  margin-right: 17%;
   background-color: var(--grey-1);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 8px;
+  border: 2px dotted var(--grey-5)
 }
 
 .product-images-input span {
@@ -63,8 +79,8 @@
 }
 
 .add-image {
-  height: 40%;
-  width: 40%;
+  height: 4rem;
+  width: 4rem;
   fill: var(--grey-5)
 }
 
