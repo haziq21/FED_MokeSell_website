@@ -19,54 +19,57 @@
   margin-left: 1rem;
 }
 
-.thumbnail-input {
+.image-input {
+  position: relative;
   display: flex;
+  height: 12rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 2px dotted var(--grey-5);
+  overflow: hidden;
   width: 12rem;
-  height: 12rem;
-  background-color: var(--grey-1);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 8px;
-  border: 2px dotted var(--grey-5)
 }
 
-
-
-.add-image-image-container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.thumbnail-input span {
-  color: var(--grey-4);
-  font-size: var(--font-sm);
-  text-align: center;
-  padding: 1rem 2rem;
-}
-
-
-
-.product-images-input {
-  display: flex;
+.image-input--long {
   width: 36rem;
-  height: 12rem;
-  background-color: var(--grey-1);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 8px;
-  border: 2px dotted var(--grey-5)
 }
 
-.product-images-input span {
+.image-dropper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--grey-1);
+}
+
+.image-dropper__text {
   color: var(--grey-4);
   font-size: var(--font-sm);
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem 2rem;
+}
+
+.thumbnail-input__image {
+  object-fit: cover;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  padding: 0.25rem;
+}
+
+.product-images__list {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  overflow: scroll;
+}
+
+.product-images__image {
+  border-radius: 4px;
+  height: 100%;
 }
 
 .product-info-inputs {
@@ -78,12 +81,11 @@
   justify-content: center;
 }
 
-.add-image {
+.image-dropper__icon {
   height: 4rem;
   width: 4rem;
-  fill: var(--grey-5)
+  fill: var(--grey-5);
 }
-
 
 #product-name {
   width: 100%;
@@ -129,11 +131,11 @@
   margin-bottom: 1rem;
 }
 
-.condition-input:focus+.condition-text {
+.condition-input:focus + .condition-text {
   outline: 2px solid black;
 }
 
-.condition-input:checked+.condition-text {
+.condition-input:checked + .condition-text {
   background-color: var(--grey-1);
   color: var(--grey-7);
 }
@@ -154,7 +156,7 @@
 .price .input-box input {
   font-size: var(--font-lg);
   padding: 0.5rem 1rem;
-  width: 90%
+  width: 90%;
 }
 
 #dollar {
@@ -206,7 +208,6 @@
   background-color: var(--grey-1);
   margin: 0 10%;
 }
-
 
 textarea {
   width: 100%;

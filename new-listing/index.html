@@ -30,25 +30,42 @@
     <form x-data="newListing" @submit.prevent="submitListing">
         <div class="listing-images">
             <div class="thumbnail-group">
-                <label for="thumbnail-input" class="label-text">Thumbnail</label>
-                <input id="thumbnail" type="file" accept="image/*" hidden>
-                <label for="thumbnail" class="thumbnail-input">
-                    <div class="add-image-image-container"><svg class="add-image" xmlns="http://www.w3.org/2000/svg"
-                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                <label for="thumbnail" class="label-text">Thumbnail</label>
+                <input id="thumbnail" type="file" accept="image/*" hidden @change="handleThumbnailChange">
+                <label for="thumbnail" class="image-input">
+                    <div class="image-dropper" x-show="!thumbnailUrl">
+                        <svg class="image-dropper__icon" xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                             <path
                                 d="M480-480ZM212.31-140Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21h300v60h-300q-5.39 0-8.85 3.46t-3.46 8.85v535.38q0 5.39 3.46 8.85t8.85 3.46h535.38q5.39 0 8.85-3.46t3.46-8.85v-300h60v300Q820-182 799-161q-21 21-51.31 21H212.31Zm43.08-152.31h449.22L565-478.46 445-322.69l-85-108.08-104.61 138.46ZM680-600v-80h-80v-60h80v-80h60v80h80v60h-80v80h-60Z" />
-                        </svg></div><span>Click here or drag-and-drop to upload an image</span>
+                        </svg>
+                        <span class="image-dropper__text">Click here or drag-and-drop to upload an image</span>
+                    </div>
+
+                    <template x-if="thumbnailUrl">
+                        <img :src="thumbnailUrl" alt="Thumbnail" class="thumbnail-input__image">
+                    </template>
                 </label>
             </div>
+
             <div class="product-group">
-                <label for="product-images-input" class="label-text">Product images</label>
-                <input id="product-images" type="file" accept="image/*" multiple hidden>
-                <label for="product-images" class="product-images-input">
-                    <div class="add-image-image-container"><svg class="add-image" xmlns="http://www.w3.org/2000/svg"
-                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                <label for="product-images" class="label-text">Product images</label>
+                <input id="product-images" type="file" accept="image/*" multiple hidden @change="handleImagesChange">
+                <label for="product-images" class="image-input image-input--long">
+                    <div class="image-dropper" x-show="!imageUrls.length">
+                        <svg class="image-dropper__icon" xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                             <path
                                 d="M480-480ZM212.31-140Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21h300v60h-300q-5.39 0-8.85 3.46t-3.46 8.85v535.38q0 5.39 3.46 8.85t8.85 3.46h535.38q5.39 0 8.85-3.46t3.46-8.85v-300h60v300Q820-182 799-161q-21 21-51.31 21H212.31Zm43.08-152.31h449.22L565-478.46 445-322.69l-85-108.08-104.61 138.46ZM680-600v-80h-80v-60h80v-80h60v80h80v60h-80v80h-60Z" />
-                        </svg></div><span>Click here or drag-and-drop to upload an image</span>
+                        </svg>
+                        <span class="image-dropper__text">Click here or drag-and-drop to upload an image</span>
+                    </div>
+
+                    <ul class="product-images__list" x-show="imageUrls.length">
+                        <template x-for="url in imageUrls">
+                            <li><img :src="url" alt="Product image" class="product-images__image"></li>
+                        </template>
+                    </ul>
                 </label>
             </div>
         </div>
