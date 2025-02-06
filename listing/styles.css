@@ -1,0 +1,42 @@
+.category {
+    color: var(--grey-5);
+    margin: 2rem 0 1rem 4rem;
+    font-size: var(--font-md);
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    height: fit-content;
+    width: 100vw;
+    margin: 1rem 0 2rem 3rem;
+}
+
+.image {
+    gap: 0.5rem;
+    height: 18rem;
+    width: 24rem;
+    background-color: var(--grey-3);
+}
+
+.title {
+    font-size: var(--font-ld);
+    font-weight: bold;
+}
+
+.listing-info {
+    margin-left: 4rem;
+    width: 40%;
+}
+
+.conditions {
+    font-size: var(--font-md);
+    color: var(--grey-5);
+    margin-bottom: 2.5rem;
+}
+
+.description {
+    font-size: var(--font-md);
+
+}
