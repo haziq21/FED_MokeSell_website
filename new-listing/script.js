@@ -10,7 +10,7 @@ Alpine.data("newListing", () => ({
   },
 
   async handleImagesChange(event) {
-    this.imageUrls = event.target.files.map((file) => URL.createObjectURL(file));
+    this.imageUrls = Array.from(event.target.files).map((file) => URL.createObjectURL(file));
   },
 
   /**
