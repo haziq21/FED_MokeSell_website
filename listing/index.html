@@ -21,9 +21,10 @@
     <script src="script.js" type="module"></script>
 </head>
 
-<body>
+<body x-data="listing">
     <nav class="navbar">
-        <img src="../assets/logo.png" alt="MokeSell logo" class="navbar__logo">
+        <a href=".." class="display-contents"><img src="../assets/logo.png" alt="MokeSell logo"
+                class="navbar__logo"></a>
         <input type="text" placeholder="Search MokeSell" class="textbox textbox--search">
 
         <template x-data="user" x-if="loggedIn !== null && !loggedIn">
@@ -36,11 +37,13 @@
         <template x-data="user" x-if="loggedIn !== null && loggedIn">
             <div class="display-contents">
                 <a href="new-listing" class="navbar__btn">Create listing</a>
-                <img src="assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
+                <img src="../assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
             </div>
         </template>
 
         <div class="category-selector">
+            <style id="cat-styles"></style>
+
             <!-- TODO: Populate this from the database -->
             <ul class="categories">
                 <li><a href="#">Electronics</a></li>
@@ -54,75 +57,75 @@
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Mobile Phones</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Laptops</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Tablets</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Cameras</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Headphones</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Smart Watches</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Mobile Phones</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Laptops</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Tablets</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Cameras</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Headphones</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Smart Watches</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Refrigerators</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Washing Machines</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Microwaves</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Air Conditioners</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Vacuum Cleaners</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Water Heaters</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Refrigerators</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Washing Machines</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Microwaves</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Air Conditioners</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Vacuum Cleaners</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Water Heaters</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Men's Clothing</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Women's Clothing</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Kid's Clothing</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Footwear</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Accessories</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Jewelry</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Men's Clothing</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Women's Clothing</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Kid's Clothing</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Footwear</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Accessories</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Jewelry</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Fiction</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Non-Fiction</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Children's Books</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Educational</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Comics</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Magazines</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Fiction</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Non-Fiction</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Children's Books</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Educational</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Comics</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Magazines</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Fitness Equipment</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Outdoor Gear</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Sportswear</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Footwear</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Accessories</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Nutrition</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Fitness Equipment</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Outdoor Gear</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Sportswear</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Footwear</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Accessories</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Nutrition</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Skincare</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Haircare</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Makeup</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Fragrances</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Personal Care</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Health Supplements</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Skincare</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Haircare</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Makeup</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Fragrances</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Personal Care</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Health Supplements</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Car Accessories</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Motorcycle</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Car Electronics</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Car Care</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Motorcycle Gear</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Tools & Equipment</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Car Accessories</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Motorcycle</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Car Electronics</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Car Care</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Motorcycle Gear</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Tools & Equipment</a></li>
             </ul>
 
             <ul class="subcategories">
-                <li><a href="#"><img src="assets/logo.png" alt="">Living Room</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Bedroom</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Office</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Outdoor</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Storage</a></li>
-                <li><a href="#"><img src="assets/logo.png" alt="">Decor</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Living Room</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Bedroom</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Office</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Outdoor</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Storage</a></li>
+                <li><a href="#"><img src="../assets/logo.png" alt="">Decor</a></li>
             </ul>
 
             <!-- TODO: Perhaps there's a cleaner solution -->
@@ -141,30 +144,28 @@
     </div>
     <div class="images">
         <div class="image">
-            <template x-for="url in imageUrls">
-                <img src="url">
-            </template>
+            <!-- <template x-for="url in imageUrls">
+                <img :src="url">
+            </template> -->
         </div>
     </div>
 
     <div style="display: flex; align-items: center;">
         <div class="listing-info">
-            <div x-text="title" class="title">
-                ASUS TUF GAMING AX4200 Dual band WiFi 6 Router
-            </div>
+            <div x-text="name" class="title"></div>
             <div class="price">
                 <span class="currency">S$ </span>
                 <span x-text="">45</span>
             </div>
             <div class="conditions">
-                <span x-text="">Listed 2 hours ago</span> &middot <span x-text="">
-                    Like New</span>
+                <span x-text="age"></span> &middot <span x-text="condition"></span>
             </div>
             <div class="description">
                 <div class="title">
                     Description
                 </div>
-                ASUS TUF GAMING AX4200 Dual Band WiFi 6 router. Almost absolutely new router without any damages.
+
+                <span x-text="description"></span>
             </div>
         </div>
         <div class="seller-purchase">

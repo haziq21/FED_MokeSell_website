@@ -1,3 +1,5 @@
+import { supabase } from "./client.js";
+
 export function getAge(date) {
   const now = new Date();
   const diffMs = now - date;
@@ -11,8 +13,17 @@ export function getAge(date) {
   } else if (diffHours < 24) {
     return `${diffHours}h ago`;
   } else if (diffDays < 7) {
-    return `${diffDays} days ago`;
+    return diffDays === 1 ? "1 day ago" : `${diffDays} days ago`;
   } else {
-    return `${diffWeeks} weeks ago`;
+    return diffWeeks === 1 ? "1 week ago" : `${diffWeeks} weeks ago`;
   }
 }
+
+// Used with Alpine.data()
+export const userData = () => ({
+  loggedIn: null,
+
+  async init() {
+    this.loggedIn = (await supabase.auth.getSession()).data.session !== null;
+  },
+});

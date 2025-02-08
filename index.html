@@ -143,13 +143,15 @@
         <ul class="listings" x-data="listings">
             <template x-for="l in listings">
                 <li class="listing">
-                    <img src="assets/default-pfp.jpg" alt="Profile picture" class="listing__pfp">
-                    <span x-text="l.users.username" class="listing__username"></span>
-                    <span x-text="l.age" class="listing__age"></span>
-                    <img :src="l.thumbnail" alt="" class="listing__thumbnail">
-                    <span x-text="l.name" class="listing__name"></span>
-                    <span x-text="l.condition" class="listing__condition"></span>
-                    <span x-text="`S\$${l.price}`" class="listing__price"></span>
+                    <a :href="`listing?id=${l.id}`" class="display-contents">
+                        <img src="assets/default-pfp.jpg" alt="Profile picture" class="listing__pfp">
+                        <span x-text="l.users.username" class="listing__username"></span>
+                        <span x-text="l.age" class="listing__age"></span>
+                        <img :src="l.thumbnail" alt="" class="listing__thumbnail">
+                        <span x-text="l.name" class="listing__name"></span>
+                        <span x-text="l.condition" class="listing__condition"></span>
+                        <span x-text="`S\$${l.price}`" class="listing__price"></span>
+                    </a>
                 </li>
             </template>
         </ul>

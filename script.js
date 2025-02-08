@@ -1,14 +1,8 @@
 import { supabase } from "./shared/client.js";
 import Alpine from "./shared/alpine.min.js";
-import { getAge } from "./shared/utils.js";
+import { getAge, userData } from "./shared/utils.js";
 
-Alpine.data("user", () => ({
-  loggedIn: null,
-
-  async init() {
-    this.loggedIn = (await supabase.auth.getSession()).data.session !== null;
-  },
-}));
+Alpine.data("user", userData);
 
 Alpine.data("listings", () => ({
   listings: [],
