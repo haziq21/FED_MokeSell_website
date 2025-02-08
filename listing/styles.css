@@ -1,112 +1,112 @@
 .category {
-    color: var(--grey-5);
-    margin: 2rem 0 1rem 4rem;
-    font-size: var(--font-md);
+  color: var(--grey-5);
+  margin: 2rem 0 1rem 4rem;
+  font-size: var(--font-md);
 }
 
 .images {
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    height: fit-content;
-    width: 100%;
-    padding: 1rem 0 2rem 3rem;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  height: fit-content;
+  width: 100%;
+  padding: 1rem 3rem 2rem 3rem;
+  gap: 1rem;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
-    /* Remove scrollbar space */
-    background: transparent;
-    /* Optional: just make scrollbar invisible */
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 
 .image {
-    gap: 0.5rem;
-    height: 18rem;
-    width: 24rem;
-    background-color: var(--grey-3);
+  gap: 0.5rem;
+  height: 18rem;
+  background-color: var(--grey-3);
+  border-radius: 8px;
 }
 
 .title {
-    font-size: var(--font-2xl);
-    font-weight: 600;
+  font-size: var(--font-2xl);
+  font-weight: 600;
 }
 
 
 .descript-title {
-    font-size: var(--font-lg);
-    font-weight: 600;
+  font-size: var(--font-lg);
+  font-weight: 600;
 }
 
 .listing-info {
-    margin-left: 4rem;
-    width: 55%;
+  margin-left: 4rem;
+  width: 55%;
 }
 
 .conditions {
-    font-size: var(--font-lg);
-    color: var(--grey-5);
-    margin-bottom: 2.5rem;
+  font-size: var(--font-lg);
+  color: var(--grey-5);
+  margin-bottom: 2.5rem;
 }
 
 .description {
-    font-size: var(--font-lg);
-
+  font-size: var(--font-lg);
 }
 
 .seller-purchase {
-    display: flex;
-    width: 45%;
-    margin-top: 2rem;
-    margin-right: 2rem;
-    flex-direction: column;
-    align-items: flex-end;
-    align-self: flex-start;
+  display: flex;
+  width: 45%;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: flex-start;
 }
 
 .seller-info {
-    display: flex;
-    margin-right: 1rem;
+  display: flex;
+  margin-right: 1rem;
 }
 
 .pfp {
-    border-radius: 50%;
-    width: 3.125rem;
-    height: 3.125rem;
-    margin-right: 0.5rem;
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 0.5rem;
 }
 
 .username-followers {
-    font-size: var(--font-lg);
+  font-size: var(--font-lg);
 }
 
 .followers {
-    color: var(--grey-4);
+  color: var(--grey-4);
 }
 
 .price {
-    font-size: var(--font-xl);
+  font-size: var(--font-xl);
 }
 
 .currency {
-    color: var(--grey-4);
+  color: var(--grey-4);
 }
 
 .offer-container {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .seller-purchase a div {
-    display: flex;
-    background-color: black;
-    font-size: var(--font-xl);
-    width: 17.4375rem;
-    height: 3.8125rem;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    gap: 0.75rem;
+  display: flex;
+  background-color: black;
+  font-size: var(--font-xl);
+  width: 17.4375rem;
+  height: 3.8125rem;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  gap: 0.75rem;
 }

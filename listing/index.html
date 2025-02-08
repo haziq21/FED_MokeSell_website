@@ -143,11 +143,9 @@
         <span x-text="category">Electronics</span> / <span x-text="subcategory">Networking</span>
     </div>
     <div class="images">
-        <div class="image">
-            <!-- <template x-for="url in imageUrls">
-                <img :src="url">
-            </template> -->
-        </div>
+        <template x-for="url in imageUrls">
+            <img :src="url" class="image">
+        </template>
     </div>
 
     <div style="display: flex; align-items: center;">
@@ -155,7 +153,7 @@
             <div x-text="name" class="title"></div>
             <div class="price">
                 <span class="currency">S$ </span>
-                <span x-text="">45</span>
+                <span x-text="price"></span>
             </div>
             <div class="conditions">
                 <span x-text="age"></span> &middot <span x-text="condition"></span>
@@ -172,9 +170,7 @@
             <div class="seller-info">
                 <img src="../assets/default-pfp.jpg" alt="Profile picture" class="pfp">
                 <div class="username-followers">
-                    <div x-text="" class="username">
-                        david athensburger
-                    </div>
+                    <div x-text="username" class="username"></div>
                     <div class="followers">
                         <span x-text="">32</span><span> followers</span>
                     </div>
