@@ -28,13 +28,13 @@
 }
 
 .title {
-    font-size: var(--font-xl);
+    font-size: var(--font-2xl);
     font-weight: bold;
 }
 
 .listing-info {
     margin-left: 4rem;
-    width: 45%;
+    width: 55%;
 }
 
 .conditions {
@@ -78,13 +78,6 @@
 }
 
 .price {
-    display: flex;
-    border: 1px solid var(--grey-3);
-    border-radius: 8px;
-    width: 6.125rem;
-    height: 3.8125rem;
-    align-items: center;
-    justify-content: center;
     font-size: var(--font-xl);
 }
 
