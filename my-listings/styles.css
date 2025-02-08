@@ -16,6 +16,9 @@ li {
     margin: auto;
     justify-content: space-between;
     margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background-color: var(--grey-2);
 }
 
 .photo {
@@ -75,4 +78,10 @@ li {
     gap: 1rem;
     font-size: var(--font-lg);
     font-weight: 400;
+}
+
+.bump {
+    border-radius: 8px;
+    border: 1px solid var(--grey-3);
+    padding: 0.5rem 1rem;
 }
