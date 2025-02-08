@@ -20,10 +20,26 @@ export function getAge(date) {
 }
 
 // Used with Alpine.data()
-export const userData = () => ({
-  loggedIn: null,
+export const navData = () => ({
+  categories: [],
+  activeCat: null,
+  showPfp: null,
 
   async init() {
-    this.loggedIn = (await supabase.auth.getSession()).data.session !== null;
+    this.showPfp = (await supabase.auth.getSession()).data.session !== null;
+    console.log(`showPfp: ${this.showPfp}`);
+
+    const { data, error } = await supabase.from("categories").select("category, subcategories (subcategory)");
+    if (error) {
+      console.error(error);
+      alert("Oops, something went wrong. Check the console for errors.");
+      return;
+    }
+
+    this.categories = data.map(({ category, subcategories }) => ({
+      category,
+      subcategories: subcategories.map((s) => s.subcategory),
+    }));
+    console.log(this.categories);
   },
 });

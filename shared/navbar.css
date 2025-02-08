@@ -62,7 +62,7 @@
 }
 
 .subcategories {
-  display: none;
+  display: flex;
   gap: 2.5rem;
   padding: 0 5.5rem 0 5.5rem;
   overflow: scroll;
