@@ -16,7 +16,6 @@
 .listing {
   display: grid;
   grid: repeat(5, auto) / auto 1fr auto;
-  max-width: fit-content;
 }
 
 .listing__pfp {
@@ -48,7 +47,7 @@
   width: 100%;
   aspect-ratio: 1/ 1;
   object-fit: cover;
-  max-width: 18rem;
+  min-width: 100%;
 }
 
 .listing__name {
