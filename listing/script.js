@@ -13,6 +13,7 @@ Alpine.data("listing", () => ({
   condition: "",
   description: "",
   imageUrls: [],
+  username: "",
 
   async init() {
     const { data, selectError } = await supabase
@@ -25,7 +26,8 @@ Alpine.data("listing", () => ({
          listed_at,
          image_paths,
          description,
-         subcategories (category, subcategory)`
+         subcategories (category, subcategory),
+         users (username)`
       )
       .eq("id", new URLSearchParams(window.location.search).get("id"))
       .single();
@@ -46,6 +48,7 @@ Alpine.data("listing", () => ({
     this.subcategory = data.subcategories.subcategory;
     this.description = data.description;
     this.imageUrls = data.image_paths.map((p) => supabase.storage.from("images").getPublicUrl(p).data.publicUrl);
+    this.username = data.users.username;
   },
 }));
 
