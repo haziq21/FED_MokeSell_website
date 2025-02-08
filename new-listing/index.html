@@ -31,7 +31,8 @@
         <div class="listing-images">
             <div class="thumbnail-group">
                 <label for="thumbnail" class="label-text">Thumbnail</label>
-                <input id="thumbnail" type="file" accept="image/*" hidden @change="handleThumbnailChange">
+                <input id="thumbnail" name="thumbnail" type="file" accept="image/*" hidden
+                    @change="handleThumbnailChange">
                 <label for="thumbnail" class="image-input">
                     <div class="image-dropper" x-show="!thumbnailUrl">
                         <svg class="image-dropper__icon" xmlns="http://www.w3.org/2000/svg" height="24px"
@@ -50,7 +51,8 @@
 
             <div class="product-group">
                 <label for="product-images" class="label-text">Product images</label>
-                <input id="product-images" type="file" accept="image/*" multiple hidden @change="handleImagesChange">
+                <input id="product-images" name="images" type="file" accept="image/*" multiple hidden
+                    @change="handleImagesChange">
                 <label for="product-images" class="image-input image-input--long">
                     <div class="image-dropper" x-show="!imageUrls.length">
                         <svg class="image-dropper__icon" xmlns="http://www.w3.org/2000/svg" height="24px"
