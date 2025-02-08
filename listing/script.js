@@ -1,8 +1,8 @@
 import { supabase } from "../shared/client.js";
 import Alpine from "../shared/alpine.min.js";
-import { userData, getAge } from "../shared/utils.js";
+import { navData, getAge } from "../shared/utils.js";
 
-Alpine.data("user", userData);
+Alpine.data("nav", navData);
 
 Alpine.data("listing", () => ({
   category: "",

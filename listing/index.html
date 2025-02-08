@@ -17,128 +17,42 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
     <script src="script.js" type="module"></script>
 </head>
 
 <body x-data="listing">
-    <nav class="navbar">
-        <a href=".." class="display-contents"><img src="../assets/logo.png" alt="MokeSell logo"
-                class="navbar__logo"></a>
+    <nav class="navbar" x-data="nav">
+        <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="navbar__logo"></a>
         <input type="text" placeholder="Search MokeSell" class="textbox textbox--search">
 
-        <template x-data="user" x-if="loggedIn !== null && !loggedIn">
-            <div class="display-contents"> <!-- <template> can only contain one root element -->
-                <a href="../signup" class="navbar__btn">Sign up</a>
-                <a href="../login" class="navbar__btn">Log in</a>
-            </div>
-        </template>
+        <a href="../signup" class="navbar__btn" x-cloak x-show="showPfp === false">Sign up</a>
+        <a href="../login" class="navbar__btn" x-cloak x-show="showPfp === false">Log in</a>
 
-        <template x-data="user" x-if="loggedIn !== null && loggedIn">
-            <div class="display-contents">
-                <a href="new-listing" class="navbar__btn">Create listing</a>
-                <img src="../assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp">
-            </div>
-        </template>
+        <a href="new-listing" class="navbar__btn" x-cloak x-show="showPfp">Create listing</a>
+        <img src="../assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp" x-cloak x-show="showPfp">
 
-        <div class="category-selector">
-            <style id="cat-styles"></style>
-
-            <!-- TODO: Populate this from the database -->
+        <div class="category-selector" @mouseleave="activeCat = null">
             <ul class="categories">
-                <li><a href="#">Electronics</a></li>
-                <li><a href="#">Home Appliances</a></li>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Beauty & Health</a></li>
-                <li><a href="#">Automotive</a></li>
-                <li><a href="#">Furniture</a></li>
+                <template x-for="cat in categories">
+                    <li @mouseover="activeCat = cat.category"><a href="#" x-text="cat.category"></a></li>
+                </template>
             </ul>
 
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Mobile Phones</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Laptops</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Tablets</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Cameras</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Headphones</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Smart Watches</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Refrigerators</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Washing Machines</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Microwaves</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Air Conditioners</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Vacuum Cleaners</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Water Heaters</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Men's Clothing</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Women's Clothing</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Kid's Clothing</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Footwear</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Accessories</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Jewelry</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Fiction</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Non-Fiction</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Children's Books</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Educational</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Comics</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Magazines</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Fitness Equipment</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Outdoor Gear</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Sportswear</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Footwear</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Accessories</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Nutrition</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Skincare</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Haircare</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Makeup</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Fragrances</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Personal Care</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Health Supplements</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Car Accessories</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Motorcycle</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Car Electronics</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Car Care</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Motorcycle Gear</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Tools & Equipment</a></li>
-            </ul>
-
-            <ul class="subcategories">
-                <li><a href="#"><img src="../assets/logo.png" alt="">Living Room</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Bedroom</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Office</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Outdoor</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Storage</a></li>
-                <li><a href="#"><img src="../assets/logo.png" alt="">Decor</a></li>
-            </ul>
-
-            <!-- TODO: Perhaps there's a cleaner solution -->
-            <script>
-                // Construct CSS rules to style subcategories
-                document.querySelectorAll('.categories li').forEach((_, n) => {
-                    document.getElementById('cat-styles').textContent +=
-                        `.categories:has(li:nth-of-type(${n + 1}):hover) ~ ul.subcategories:nth-of-type(${n + 2}),
-                         ul.subcategories:nth-of-type(${n + 2}):hover { display: flex; }`;
-                })
-            </script>
+            <template x-for="cat in categories">
+                <ul class="subcategories" x-show="activeCat === cat.category">
+                    <template x-for="subcat in cat.subcategories">
+                        <li><a href="#"><img src="../assets/logo.png" alt=""><span x-text="subcat"></span></a></li>
+                    </template>
+                </ul>
+            </template>
         </div>
     </nav>
+
     <div class="category">
         <span x-text="category">Electronics</span> / <span x-text="subcategory">Networking</span>
     </div>
