@@ -1,14 +1,78 @@
+.smallnav {
+    margin-bottom: 2rem;
+
+}
+
+
+
+li {
+    margin-top: 4rem;
+}
+
 .listing {
-    width: 56%;
+    display: flex;
+    width: 44rem;
     height: fit-content;
     margin: auto;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .photo {
-    height: 3.2rem;
+    height: fit-content;
+    width: 9.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--font-lg);
+    color: var(--grey-5);
 }
 
 .photo img {
     height: 9.5rem;
     width: 9.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.info-action {
+    width: 30rem;
+    justify-self: ;
+}
+
+.title {
+    font-size: var(--font-xl);
+    margin-top: 0.5rem;
+}
+
+.condition-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.condition {
+    color: var(--grey-5);
+    font-size: var(--font-lg);
+}
+
+.price {
+    margin-top: 0.3rem;
+    font-size: var(--font-lg);
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    gap: 3rem;
+    justify-content: right;
+    margin-top: 2.5rem;
+}
+
+.actions div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: var(--font-lg);
+    font-weight: 400;
 }
