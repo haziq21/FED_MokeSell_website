@@ -30,7 +30,24 @@
     <ul>
         <template x-data="myListings" x-for="l in listings">
             <li>
-                <img :src="l.thumbnail" alt="Listing thumbnail">
+                <div class="listing">
+                    <div class="photo">
+                        <img :src="l.thumbnail" alt="Listing thumbnail">
+
+                    </div>
+                    <div class="info-action">
+                        <div class="title">
+
+                        </div>
+                        <div class="condition-price">
+
+                        </div>
+                        <div class="actions">
+
+                        </div>
+
+                    </div>
+                </div>
                 <span x-text="l.imageCount"></span>
                 <span x-text="l.name"></span>
                 <span x-text="l.age"></span>

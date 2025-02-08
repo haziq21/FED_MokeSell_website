@@ -1,0 +1,14 @@
+.listing {
+    width: 56%;
+    height: fit-content;
+    justify-self: center;
+}
+
+.photo {
+    height: 3.2rem;
+}
+
+.photo img {
+    height: 9.5rem;
+    width: 9.5rem;
+}
