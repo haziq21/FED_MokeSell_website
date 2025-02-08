@@ -1,7 +1,7 @@
 .listing {
     width: 56%;
     height: fit-content;
-    justify-self: center;
+    margin: auto;
 }
 
 .photo {
