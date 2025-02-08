@@ -12,6 +12,7 @@ Alpine.data("listing", () => ({
   age: "",
   condition: "",
   description: "",
+  imageUrls: [],
 
   async init() {
     const { data, selectError } = await supabase
@@ -44,6 +45,7 @@ Alpine.data("listing", () => ({
     this.category = data.subcategories.category;
     this.subcategory = data.subcategories.subcategory;
     this.description = data.description;
+    this.imageUrls = data.image_paths.map((p) => supabase.storage.from("images").getPublicUrl(p).data.publicUrl);
   },
 }));
 
