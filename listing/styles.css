@@ -1,6 +1,6 @@
 .category {
   color: var(--grey-5);
-  margin: 2rem 0 1rem 4rem;
+  margin: 11rem 0 1rem 4rem;
   font-size: var(--font-md);
 }
 
@@ -32,7 +32,6 @@
   font-size: var(--font-2xl);
   font-weight: 600;
 }
-
 
 .descript-title {
   font-size: var(--font-lg);
