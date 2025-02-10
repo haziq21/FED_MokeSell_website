@@ -7,10 +7,34 @@
 
 .listings {
   display: grid;
-  grid-template-columns: repeat(4, minmax(15rem, 18rem));
-  margin: 2rem 5.5rem 10rem 5.5rem;
-  gap: 3rem 2rem;
+  margin: 2rem 0.5rem 10rem 0.5rem;
+  grid-template-columns: repeat(2, minmax(10rem, 18rem));
+  gap: 2rem 0.5rem;
   width: fit-content;
+}
+
+@media screen and (min-width: 600px) {
+  .listings {
+    margin: 2rem 1.5rem 10rem 1.5rem;
+    grid-template-columns: repeat(2, minmax(15rem, 18rem));
+    gap: 2rem 1rem;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .listings {
+    margin: 2rem 2.5rem 10rem 2.5rem;
+    grid-template-columns: repeat(3, minmax(15rem, 18rem));
+    gap: 3rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .listings {
+    margin: 2rem 5.5rem 10rem 5.5rem;
+    grid-template-columns: repeat(4, minmax(15rem, 18rem));
+    gap: 3rem 2rem;
+  }
 }
 
 .listing {
@@ -55,6 +79,7 @@
   margin: 0.75rem 0.5rem -0.2rem 0.5rem;
   color: var(--grey-7);
   font-weight: 500;
+  font-size: var(--font-md);
 }
 
 .listing__condition {
@@ -70,6 +95,17 @@
   font-weight: 500;
   text-align: right;
   margin-right: 0.5rem;
+  font-size: var(--font-md);
+}
+
+@media screen and (min-width: 500px) {
+  .listing__name {
+    font-size: var(--font-lg);
+  }
+
+  .listing__price {
+    font-size: var(--font-lg);
+  }
 }
 
 .content {
