@@ -47,8 +47,7 @@
 
 .listing-info {
   margin-left: 4rem;
-  width: 55%;
-  min-width: max-content;
+  width: max-content;
 }
 
 .conditions {
