@@ -94,6 +94,7 @@ label {
   background-color: var(--grey-1);
   border-radius: 0.5rem;
   height: 2.5rem;
+  padding: 0 1rem;
 }
 
 .label {
@@ -133,11 +134,11 @@ label {
   margin: 0.25rem 0.75rem;
 }
 
-.condition-input:focus + .condition-text {
+.condition-input:focus+.condition-text {
   outline: 2px solid black;
 }
 
-.condition-input:checked + .condition-text {
+.condition-input:checked+.condition-text {
   background-color: var(--grey-1);
   color: var(--grey-7);
 }
@@ -289,5 +290,41 @@ textarea {
     margin: 0 15%;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .product-variables {
+    flex-direction: column;
+  }
+
+  .price {
+    width: 100%;
+  }
+
+  .price .input-box {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .price .label {
+    justify-content: left;
+  }
+
+  .condition-text {
+    margin: 0.2rem 0.25rem;
+  }
+
+  .select-cat label {
+    margin-left: 1rem;
+    text-wrap: nowrap;
+  }
+
+  .product-info-inputs {
+    padding: 0 1.5rem;
+  }
+
+  .listing-images {
+    padding: 0 1.5rem;
   }
 }
