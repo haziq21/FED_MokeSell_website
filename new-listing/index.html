@@ -115,8 +115,8 @@
                 <div>
                     <label for="subcat">Sub Category</label>
                     <select name="subcat" id="subcategories">
-                        <template x-for="subcat in categories[selectedCat].subcategories">
-                            <option x-text="subcat" :value="subcat"></option>
+                        <template x-for="(subcat, id) in categories[selectedCat].subcategories">
+                            <option x-text="subcat" :value="id"></option>
                         </template>
                     </select>
                 </div>

@@ -54,6 +54,7 @@ Alpine.data("newListing", () => ({
       listed_by: userId,
       thumbnail_path: storageResults[0].data.path,
       image_paths: storageResults.slice(1).map((res) => res.data.path),
+      subcategory_id: formData.get("subcat"),
     });
 
     // Check for errors in the listing upload
@@ -73,7 +74,7 @@ Alpine.data("catSelect", () => ({
   selectedCat: null,
 
   async init() {
-    const { data, error } = await supabase.from("categories").select("category, subcategories (subcategory)");
+    const { data, error } = await supabase.from("categories").select("category, subcategories (id, subcategory)");
     if (error) {
       console.error(error);
       alert("Oops, something went wrong. Check the console for errors.");
@@ -82,7 +83,7 @@ Alpine.data("catSelect", () => ({
 
     this.categories = data.map(({ category, subcategories }) => ({
       category,
-      subcategories: subcategories.map((s) => s.subcategory),
+      subcategories: subcategories.reduce((acc, s) => ({ ...acc, [s.id]: s.subcategory }), {}),
     }));
   },
 }));
