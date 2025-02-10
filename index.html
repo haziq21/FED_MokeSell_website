@@ -59,7 +59,7 @@
         <ul class="listings" x-data="listings">
             <template x-for="l in listings">
                 <li class="listing">
-                    <a :href="`listing?id=${l.id}`" class="display-contents">
+                    <a :href="`listing/?id=${l.id}`" class="display-contents">
                         <img src="assets/default-pfp.jpg" alt="Profile picture" class="listing__pfp">
                         <span x-text="l.users.username" class="listing__username"></span>
                         <span x-text="l.age" class="listing__age"></span>
