@@ -11,7 +11,7 @@
 }
 
 .smallnav__header {
-  font-size: var(--font-2xl);
+  font-size: var(--font-3xl);
   font-weight: 500;
   margin-left: 1.5rem;
 }

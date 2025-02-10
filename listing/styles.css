@@ -28,8 +28,15 @@
   border-radius: 8px;
 }
 
+.interaction {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .title {
-  font-size: var(--font-2xl);
+  font-size: var(--font-3xl);
   font-weight: 600;
 }
 
@@ -41,6 +48,7 @@
 .listing-info {
   margin-left: 4rem;
   width: 55%;
+  min-width: max-content;
 }
 
 .conditions {
@@ -55,17 +63,19 @@
 
 .seller-purchase {
   display: flex;
-  width: 45%;
-  margin-top: 2rem;
-  margin-right: 2rem;
+  width: fit-content;
+  margin: 2rem 4rem 0 0;
   flex-direction: column;
+  justify-self: right;
   align-items: flex-end;
   align-self: flex-start;
+  flex-grow: 1;
+  min-width: max-content;
 }
 
 .seller-info {
   display: flex;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .pfp {
@@ -84,7 +94,7 @@
 }
 
 .price {
-  font-size: var(--font-xl);
+  font-size: var(--font-2xl);
 }
 
 .currency {
@@ -95,15 +105,17 @@
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  font-size: var(--font-xs);
 }
+
+
 
 .seller-purchase a div {
   display: flex;
   background-color: black;
   font-size: var(--font-xl);
-  width: 17.4375rem;
-  height: 3.8125rem;
   color: white;
+  padding: 1rem 2rem;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
