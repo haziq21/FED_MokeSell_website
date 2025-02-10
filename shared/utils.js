@@ -27,7 +27,6 @@ export const navData = () => ({
 
   async init() {
     this.showPfp = (await supabase.auth.getSession()).data.session !== null;
-    console.log(`showPfp: ${this.showPfp}`);
 
     const { data, error } = await supabase.from("categories").select("category, subcategories (subcategory)");
     if (error) {
@@ -40,6 +39,5 @@ export const navData = () => ({
       category,
       subcategories: subcategories.map((s) => s.subcategory),
     }));
-    console.log(this.categories);
   },
 });
