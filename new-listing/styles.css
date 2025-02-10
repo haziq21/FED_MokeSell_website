@@ -225,9 +225,11 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin: 2rem 0 4rem 0;
   width: 80%;
   gap: 6rem;
+  font-size: var(--font-md);
+  text-wrap: nowrap;
 }
 
 .submit-button {
@@ -236,6 +238,8 @@ textarea {
   background-color: black;
   color: white;
   border-radius: 8px;
+  padding: 0 0.5rem;
+
 }
 
 @media screen and (min-width: 900px) {
