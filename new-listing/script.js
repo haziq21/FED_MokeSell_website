@@ -68,4 +68,23 @@ Alpine.data("newListing", () => ({
   },
 }));
 
+Alpine.data("catSelect", () => ({
+  categories: [],
+  selectedCat: null,
+
+  async init() {
+    const { data, error } = await supabase.from("categories").select("category, subcategories (subcategory)");
+    if (error) {
+      console.error(error);
+      alert("Oops, something went wrong. Check the console for errors.");
+      return;
+    }
+
+    this.categories = data.map(({ category, subcategories }) => ({
+      category,
+      subcategories: subcategories.map((s) => s.subcategory),
+    }));
+  },
+}));
+
 Alpine.start();

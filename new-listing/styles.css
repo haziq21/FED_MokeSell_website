@@ -16,10 +16,6 @@ label {
   margin-top: 2.5rem;
 }
 
-
-
-
-
 .label-text {
   margin-left: 1rem;
 }
@@ -137,13 +133,11 @@ label {
   margin: 0.25rem 0.75rem;
 }
 
-
-
-.condition-input:focus+.condition-text {
+.condition-input:focus + .condition-text {
   outline: 2px solid black;
 }
 
-.condition-input:checked+.condition-text {
+.condition-input:checked + .condition-text {
   background-color: var(--grey-1);
   color: var(--grey-7);
 }
@@ -180,8 +174,6 @@ label {
   justify-content: right;
   margin-right: 0.5rem;
 }
-
-
 
 .select-cat {
   display: flex;

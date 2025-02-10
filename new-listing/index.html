@@ -103,29 +103,21 @@
                     </div>
                 </div>
             </div>
-            <div class="select-cat">
+            <div class="select-cat" x-data="catSelect">
                 <div>
                     <label for="cat">Category</label>
-                    <select name="cat" id="categories">
-                        <option value="Electronics">Electronics</option>
-                        <option value="Self propelled vehicles">Self propelled vehicles</option>
-                        <option value="Apparel">Apparel</option>
-                        <option value="Toys">Toys</option>
-                        <option value="Appliances">Appliances</option>
-                        <option value="Gadgets">Gadgets</option>
-                        <option value="Furniture">Furniture</option>
+                    <select name="cat" id="categories" @change="selectedCat = $el.selectedIndex">
+                        <template x-for="cat in categories">
+                            <option x-text="cat.category" :value="cat.category"></option>
+                        </template>
                     </select>
                 </div>
                 <div>
                     <label for="subcat">Sub Category</label>
                     <select name="subcat" id="subcategories">
-                        <option>Electronics</option>
-                        <option>Electronics</option>
-                        <option>Electronics</option>
-                        <option>Electronics</option>
-                        <option>Electronics</option>
-                        <option>Electronics</option>
-                        <option>Electronics</option>
+                        <template x-for="subcat in categories[selectedCat].subcategories">
+                            <option x-text="subcat" :value="subcat"></option>
+                        </template>
                     </select>
                 </div>
             </div>
