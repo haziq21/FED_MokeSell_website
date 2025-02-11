@@ -4,6 +4,7 @@ import Alpine from "../shared/alpine.min.js";
 
 Alpine.data("myListings", () => ({
   listings: [],
+  dropdownOpen: false,
 
   async init() {
     const { userId, error } = await getUserID();

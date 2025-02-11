@@ -6,6 +6,7 @@ Alpine.data("nav", navData);
 
 Alpine.data("listings", () => ({
   listings: [],
+  dropdownOpen: false,
 
   async init() {
     const { data, error } = await supabase

@@ -4,6 +4,7 @@ import Alpine from "../shared/alpine.min.js";
 Alpine.data("newListing", () => ({
   thumbnailUrl: null,
   imageUrls: [],
+  dropdownOpen: false,
 
   async handleThumbnailChange(event) {
     this.thumbnailUrl = URL.createObjectURL(event.target.files[0]);

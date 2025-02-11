@@ -54,3 +54,26 @@ textarea:focus,
 input:focus {
   outline: 1px solid var(--grey-5)
 }
+
+.animation {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  translate: -50% -50%;
+}
+
+.dropdown {
+  background-color: white;
+  padding: 1rem 3rem 1rem 1rem;
+  position: fixed;
+  right: 1.5rem;
+  top: 5.5rem;
+  color: var(--grey-5);
+  border: 1px solid var(--grey-3);
+  border-radius: 8px;
+  box-shadow: 0 4px 18.1px -9px var(--grey-3);
+}
+
+.dropdown li {
+  padding: 0.2rem 0;
+}

@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <style>
         [x-cloak] {
             display: none !important;
@@ -25,7 +25,7 @@
     <script type="module" src="script.js"></script>
 </head>
 
-<body>
+<body x-data="listings">
     <nav class="navbar" x-data="nav">
         <img src="assets/logo.png" alt="MokeSell logo" class="navbar__logo">
         <input type="text" placeholder="Search MokeSell" class="textbox textbox--search">
@@ -34,8 +34,13 @@
         <a href="login" class="navbar__btn" x-cloak x-show="showPfp === false">Log in</a>
 
         <a href="new-listing" class="navbar__btn" x-cloak x-show="showPfp">Create listing</a>
-        <img src="assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp" x-cloak x-show="showPfp">
-
+        <img src="assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp" x-cloak x-show="showPfp"
+            @click="dropdownOpen = !dropdownOpen">
+        <ul x-show="dropdownOpen" class="dropdown">
+            <li><a href="my-listings/">My Listings</a></li>
+            <li><a href="new-listing/">New Listing</a></li>
+            <li><a href="">Log Out</a></li>
+        </ul>
         <div class="category-selector" @mouseleave="activeCat = null">
             <ul class="categories">
                 <template x-for="cat in categories">
@@ -56,7 +61,7 @@
     <main class="content">
         <h1 class="section-header">Recent listings</h1>
 
-        <ul class="listings" x-data="listings">
+        <ul class="listings">
             <template x-for="l in listings">
                 <li class="listing">
                     <a :href="`listing/?id=${l.id}`" class="display-contents">
@@ -72,6 +77,8 @@
             </template>
         </ul>
     </main>
+    <dotlottie-player class="animation" src="https://lottie.host/642ed790-d54c-415e-997a-6bc611956ed9/4ZjZHGYPCH.lottie"
+        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
 </body>
 
 </html>

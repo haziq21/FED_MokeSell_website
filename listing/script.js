@@ -14,6 +14,7 @@ Alpine.data("listing", () => ({
   description: "",
   imageUrls: [],
   username: "",
+  dropdownOpen: false,
 
   async init() {
     const { data, selectError } = await supabase

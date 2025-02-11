@@ -20,14 +20,20 @@
     <script src="script.js" type="module"></script>
 </head>
 
-<body>
+<body x-data="newListing">
     <nav class="smallnav">
         <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="smallnav__logo"></a>
         <h1 class="smallnav__header">New listing</h1>
-        <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp">
+        <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp"
+            @click="dropdownOpen = !dropdownOpen">
+        <ul x-show="dropdownOpen" class="dropdown">
+            <li><a href="../my-listings/">My Listings</a></li>
+            <li><a href="../new-listing/">New Listing</a></li>
+            <li><a href="">Log Out</a></li>
+        </ul>
     </nav>
 
-    <form x-data="newListing" @submit.prevent="submitListing">
+    <form @submit.prevent="submitListing">
         <div class="listing-images">
             <div class="thumbnail-group">
                 <label for="thumbnail" class="label-text">Thumbnail</label>
