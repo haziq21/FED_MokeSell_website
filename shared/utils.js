@@ -41,9 +41,31 @@ export const navData = () => ({
       subcategories: subcategories.map((s) => s.subcategory),
     }));
   },
+
+  async signout(redirect) {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error(error);
+      alert("Oops, something went wrong. Check the console for errors.");
+      return;
+    }
+
+    window.location = redirect;
+  },
 });
 
 // Used with Alpine.data()
 export const smallnavData = () => ({
   dropdownOpen: false,
+
+  async signout(redirect) {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error(error);
+      alert("Oops, something went wrong. Check the console for errors.");
+      return;
+    }
+
+    window.location = redirect;
+  },
 });

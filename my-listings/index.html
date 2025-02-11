@@ -43,7 +43,7 @@
         <ul x-cloak x-show="dropdownOpen" class="dropdown">
             <li><a href="../my-listings/">My Listings</a></li>
             <li><a href="../new-listing/">New Listing</a></li>
-            <li><a href="">Log Out</a></li>
+            <li @click="signout('../login')" class="cursor-pointer">Log Out</li>
         </ul>
     </nav>
 

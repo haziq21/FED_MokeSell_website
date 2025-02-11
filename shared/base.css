@@ -52,7 +52,7 @@ label {
 
 textarea:focus,
 input:focus {
-  outline: 1px solid var(--grey-5)
+  outline: 1px solid var(--grey-5);
 }
 
 .animation {
@@ -76,4 +76,8 @@ input:focus {
 
 .dropdown li {
   padding: 0.2rem 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
