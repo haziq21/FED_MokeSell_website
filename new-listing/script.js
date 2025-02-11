@@ -32,8 +32,23 @@ Alpine.data("newListing", () => ({
 
     const formData = new FormData(event.target);
 
-    // Upload the thumbnail and product images concurrently
     const files = [formData.get("thumbnail"), ...formData.getAll("images")];
+    const dataToInsert = {
+      listed_by: userId,
+      name: formData.get("name"),
+      description: formData.get("description"),
+      price: formData.get("price"),
+      condition: formData.get("condition"),
+      subcategory_id: formData.get("subcat"),
+    };
+
+    // Ensure that all fields are filled out
+    if (Object.values(dataToInsert).some((val) => val === "") || files.some((file) => file.size === 0)) {
+      alert("All fields are required.");
+      return;
+    }
+
+    // Upload the thumbnail and product images concurrently
     const storageResults = await Promise.all(
       files.map(async (file) => {
         const ext = file.name.split(".").at(-1);
@@ -48,17 +63,14 @@ Alpine.data("newListing", () => ({
       alert("Oops, something went wrong. Check the console for errors.");
     }
 
-    // Upload the listing information
-    const { error } = await supabase.from("listings").insert({
-      name: formData.get("name"),
-      description: formData.get("description"),
-      price: formData.get("price"),
-      condition: formData.get("condition"),
-      listed_by: userId,
+    dataToInsert = {
+      ...dataToInsert,
       thumbnail_path: storageResults[0].data.path,
       image_paths: storageResults.slice(1).map((res) => res.data.path),
-      subcategory_id: formData.get("subcat"),
-    });
+    };
+
+    // Upload the listing information
+    const { error } = await supabase.from("listings").insert(dataToInsert);
 
     // Check for errors in the listing upload
     if (error) {
@@ -91,4 +103,11 @@ Alpine.data("catSelect", () => ({
   },
 }));
 
-Alpine.start();
+// Redirect to the login page if the user is not signed in
+getUserID().then(({ userId }) => {
+  if (!userId) {
+    window.location.href = "../login";
+  }
+
+  Alpine.start();
+});
