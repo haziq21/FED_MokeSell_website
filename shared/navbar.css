@@ -102,6 +102,9 @@
 .subcategories img {
   width: 100%;
   max-width: 6rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 450px) {
