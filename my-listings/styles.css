@@ -1,87 +1,84 @@
 .smallnav {
-    margin-bottom: 2rem;
-
+  margin-bottom: 2rem;
 }
 
-
-
 .listing-container {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .listing {
-    display: flex;
-    width: 44rem;
-    height: fit-content;
-    margin: auto;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    background-color: var(--grey-2);
+  display: flex;
+  width: 44rem;
+  height: fit-content;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--grey-2);
+  gap: 2rem;
 }
 
 .photo {
-    height: fit-content;
-    width: 9.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--font-lg);
-    color: var(--grey-5);
+  height: fit-content;
+  width: 9.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--font-md);
+  color: var(--grey-5);
 }
 
 .photo img {
-    height: 9.5rem;
-    width: 9.5rem;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
+  height: 9.5rem;
+  width: 9.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .info-action {
-    width: 30rem;
-    justify-self: ;
+  width: 30rem;
 }
 
 .title {
-    font-size: var(--font-2xl);
-    margin-top: 0.5rem;
+  font-size: var(--font-2xl);
+  margin-top: 0.5rem;
 }
 
 .condition-price {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .condition {
-    color: var(--grey-5);
-    font-size: var(--font-lg);
+  color: var(--grey-5);
+  font-size: var(--font-lg);
 }
 
 .price {
-    margin-top: 0.3rem;
-    font-size: var(--font-lg);
-    font-weight: 600;
+  margin-top: 0.3rem;
+  font-size: var(--font-lg);
+  font-weight: 600;
 }
 
 .actions {
-    display: flex;
-    gap: 3rem;
-    justify-content: right;
-    margin-top: 2.5rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: right;
+  margin-top: 2.5rem;
 }
 
 .actions div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: var(--font-lg);
-    font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-lg);
+  font-weight: 400;
 }
 
 .bump {
-    border-radius: 8px;
-    border: 1px solid var(--grey-3);
-    padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--grey-3);
+  padding: 0.5rem 1rem;
 }
