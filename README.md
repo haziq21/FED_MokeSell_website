@@ -20,22 +20,3 @@ This is a simple e-commerce website for a front-end development assignment.
 **Directory structure:** All pages follow the directory structure `/path/index.html`, with page-specific CSS and JS in `/path/styles.css` and `/path/script.js`. Shared CSS and JS are in `/shared/`.
 
 **Conventions:** Where it helps, CSS is organised with [BEM](https://getbem.com/introduction/). [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) are used to organise JS.
-
-## TODOs
-
-| Item                                                         | Person          | Done               |
-| ------------------------------------------------------------ | --------------- | ------------------ |
-| **Complete basic (no Alpine) "New listing" desktop UI as per Figma.** <br />Use `<input type="submit">` for the "post listing" button. | Koh Hau         |                    |
-| **Complete `handleProductImagesChange(event)` for "New listing" page.**<br />Push generated object URLs into `productImageLocalURLs`. Upload images to Supabase and push paths to `productImageStoragePaths` | Haziq           | :white_check_mark: |
-| **Connect "New listing" UI to JS via Alpine.**<br />Use `<form x-data="newListing" @submit="createListing">`, with `@change="handleThumbnailChange"` and `@change="handleProductImagesChange"` (implemented in script.js) on the relevant input elements. | Haziq / Koh Hau | :white_check_mark: |
-| **Implement `smallnav` CSS class used by "New listing" and "Your listings" pages.**<br />Use flexbox. | Haziq           | :white_check_mark: |
-| **Complete basic "Your listings" desktop UI as per Figma.**  | Koh Hau         |                    |
-| **Implement Alpine data component `"listings"` for "Your listings" page.**<br />Select all listings belonging to the current user. | Haziq           | :white_check_mark: |
-| **Connect "Your listings" UI to JS via Alpine.**<br />Use `<template x-data="listings" x-for="l in listings">`, and `x-text="..."` where needed, to generate UI based on the data from the database. See the bottom of `/index.html` for reference. | Koh Hau         | :white_check_mark: |
-| **Implement Alpine data component for listing page.**<br />Select one row from the `listings` table. | Haziq           |                    |
-| **Make "New listing" page responsive for mobile.**           | Koh Hau         |                    |
-| **Scaffold HTML structure & CSS layouts for listing page.**  | Haziq           |                    |
-| **Complete basic desktop UI for listing page.**              | Koh Hau         |                    |
-| **Connect listing page UI to JS via Alpine.**                | Haziq           |                    |
-| **Make listing page responsive for mobile.**                 | Koh Hau         |                    |
-
