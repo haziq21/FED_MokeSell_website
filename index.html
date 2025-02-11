@@ -36,11 +36,12 @@
         <a href="new-listing" class="navbar__btn" x-cloak x-show="showPfp">Create listing</a>
         <img src="assets/default-pfp.jpg" alt="Profile picture" class="navbar__pfp" x-cloak x-show="showPfp"
             @click="dropdownOpen = !dropdownOpen">
-        <ul x-show="dropdownOpen" class="dropdown">
+        <ul x-cloak x-show="dropdownOpen" class="dropdown">
             <li><a href="my-listings/">My Listings</a></li>
             <li><a href="new-listing/">New Listing</a></li>
             <li><a href="">Log Out</a></li>
         </ul>
+
         <div class="category-selector" @mouseleave="activeCat = null">
             <ul class="categories">
                 <template x-for="cat in categories">
@@ -77,8 +78,10 @@
             </template>
         </ul>
     </main>
+
     <dotlottie-player class="animation" src="https://lottie.host/642ed790-d54c-415e-997a-6bc611956ed9/4ZjZHGYPCH.lottie"
-        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay
+        x-show="!listings.length"></dotlottie-player>
 </body>
 
 </html>

@@ -8,13 +8,12 @@ Alpine.data("listing", () => ({
   category: "",
   subcategory: "",
   name: "",
-  price: 0,
+  price: null,
   age: "",
   condition: "",
   description: "",
   imageUrls: [],
   username: "",
-  dropdownOpen: false,
 
   async init() {
     const { data, selectError } = await supabase

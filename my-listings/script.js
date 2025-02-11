@@ -1,10 +1,11 @@
 import { supabase, getUserID } from "../shared/client.js";
-import { getAge } from "../shared/utils.js";
+import { getAge, smallnavData } from "../shared/utils.js";
 import Alpine from "../shared/alpine.min.js";
+
+Alpine.data("smallnav", smallnavData);
 
 Alpine.data("myListings", () => ({
   listings: [],
-  dropdownOpen: false,
 
   async init() {
     const { userId, error } = await getUserID();

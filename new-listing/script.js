@@ -1,10 +1,12 @@
 import { supabase, getUserID } from "../shared/client.js";
 import Alpine from "../shared/alpine.min.js";
+import { smallnavData } from "../shared/utils.js";
+
+Alpine.data("smallnav", smallnavData);
 
 Alpine.data("newListing", () => ({
   thumbnailUrl: null,
   imageUrls: [],
-  dropdownOpen: false,
 
   async handleThumbnailChange(event) {
     this.thumbnailUrl = URL.createObjectURL(event.target.files[0]);

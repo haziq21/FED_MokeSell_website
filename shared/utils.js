@@ -24,6 +24,7 @@ export const navData = () => ({
   categories: [],
   activeCat: null,
   showPfp: null,
+  dropdownOpen: false,
 
   async init() {
     this.showPfp = (await supabase.auth.getSession()).data.session !== null;
@@ -40,4 +41,9 @@ export const navData = () => ({
       subcategories: subcategories.map((s) => s.subcategory),
     }));
   },
+});
+
+// Used with Alpine.data()
+export const smallnavData = () => ({
+  dropdownOpen: false,
 });

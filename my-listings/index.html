@@ -16,12 +16,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <script src="script.js" type="module"></script>
 </head>
 
 <body x-data="myListings">
-    <nav class="smallnav">
+    <nav class="smallnav" x-data="smallnav">
         <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="smallnav__logo"></a>
         <h1 class="smallnav__header">My listings</h1>
         <a class="smallnav__btn" href="../new-listing/"><svg width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -33,7 +38,7 @@
             Create Listing </a>
         <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp"
             @click="dropdownOpen = !dropdownOpen">
-        <ul x-show="dropdownOpen" class="dropdown">
+        <ul x-cloak x-show="dropdownOpen" class="dropdown">
             <li><a href="../my-listings/">My Listings</a></li>
             <li><a href="../new-listing/">New Listing</a></li>
             <li><a href="">Log Out</a></li>
@@ -95,8 +100,10 @@
             </li>
         </template>
     </ul>
+
     <dotlottie-player class="animation" src="https://lottie.host/642ed790-d54c-415e-997a-6bc611956ed9/4ZjZHGYPCH.lottie"
-        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay
+        x-show="!listings.length"></dotlottie-player>
 </body>
 
 </html>

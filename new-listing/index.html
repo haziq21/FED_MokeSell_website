@@ -16,17 +16,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 
     <script src="script.js" type="module"></script>
 </head>
 
 <body x-data="newListing">
-    <nav class="smallnav">
+    <nav class="smallnav" x-data="smallnav">
         <a href=".."><img src="../assets/logo.png" alt="MokeSell logo" class="smallnav__logo"></a>
         <h1 class="smallnav__header">New listing</h1>
         <img src="../assets/default-pfp.jpg" alt="Profile picture" class="smallnav__pfp"
             @click="dropdownOpen = !dropdownOpen">
-        <ul x-show="dropdownOpen" class="dropdown">
+        <ul x-cloak x-show="dropdownOpen" class="dropdown">
             <li><a href="../my-listings/">My Listings</a></li>
             <li><a href="../new-listing/">New Listing</a></li>
             <li><a href="">Log Out</a></li>
