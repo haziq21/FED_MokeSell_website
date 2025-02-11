@@ -113,7 +113,7 @@
   font-size: var(--font-md);
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
   .listing__name {
     font-size: var(--font-lg);
   }
