@@ -72,7 +72,7 @@ Alpine.data("newListing", () => ({
 
 Alpine.data("catSelect", () => ({
   categories: [],
-  selectedCat: null,
+  selectedCat: 1,
 
   async init() {
     const { data, error } = await supabase.from("categories").select("category, subcategories (id, subcategory)");
