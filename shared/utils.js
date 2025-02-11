@@ -29,17 +29,25 @@ export const navData = () => ({
   async init() {
     this.showPfp = (await supabase.auth.getSession()).data.session !== null;
 
-    const { data, error } = await supabase.from("categories").select("category, subcategories (subcategory)");
+    const { data, error } = await supabase
+      .from("categories")
+      .select("category, subcategories (subcategory, image_path)");
     if (error) {
       console.error(error);
       alert("Oops, something went wrong. Check the console for errors.");
       return;
     }
 
-    this.categories = data.map(({ category, subcategories }) => ({
-      category,
-      subcategories: subcategories.map((s) => s.subcategory),
-    }));
+    for (const cat of data) {
+      for (const subcat of cat.subcategories) {
+        const path = subcat.image_path;
+        if (!path) continue;
+        const { data } = supabase.storage.from("categories").getPublicUrl(path);
+        subcat.image_path = data.publicUrl;
+      }
+    }
+
+    this.categories = data;
   },
 
   async signout(redirect) {
