@@ -46,8 +46,8 @@
 }
 
 .listing-info {
-  margin-left: 4rem;
-  width: max-content;
+  margin: 0 4rem;
+  width: 40rem;
 }
 
 .conditions {
@@ -106,8 +106,6 @@
   margin-top: 2rem;
   font-size: var(--font-xs);
 }
-
-
 
 .seller-purchase a div {
   display: flex;
