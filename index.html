@@ -50,7 +50,7 @@
             <ul x-cloak x-show="dropdownOpen" class="dropdown">
                 <li><a href="my-listings/">My Listings</a></li>
                 <li><a href="new-listing/">New Listing</a></li>
-                <li><a href="">Log Out</a></li>
+                <li @click="signout('login/')" class="cursor-pointer">Log Out</li>
             </ul>
         </div>
 
@@ -64,7 +64,12 @@
             <template x-for="cat in categories">
                 <ul class="subcategories" x-show="activeCat === cat.category">
                     <template x-for="subcat in cat.subcategories">
-                        <li><a href="#"><img src="assets/logo.png" alt=""><span x-text="subcat"></span></a></li>
+                        <li>
+                            <a href="#">
+                                <img :src="subcat.image_path || 'assets/logo.png'" alt="">
+                                <span x-text="subcat.subcategory"></span>
+                            </a>
+                        </li>
                     </template>
                 </ul>
             </template>
