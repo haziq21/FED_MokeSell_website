@@ -134,11 +134,11 @@ label {
   margin: 0.25rem 0.75rem;
 }
 
-.condition-input:focus+.condition-text {
+.condition-input:focus + .condition-text {
   outline: 2px solid black;
 }
 
-.condition-input:checked+.condition-text {
+.condition-input:checked + .condition-text {
   background-color: var(--grey-1);
   color: var(--grey-7);
 }
@@ -202,6 +202,7 @@ label {
   border-radius: 8px;
   background-color: var(--grey-1);
   margin: 1rem 10%;
+  padding: 0.5rem 0;
 }
 
 #subcategories {
@@ -211,6 +212,7 @@ label {
   border-radius: 8px;
   background-color: var(--grey-1);
   margin: 1rem 10%;
+  padding: 0.5rem 0;
 }
 
 textarea {
@@ -239,7 +241,6 @@ textarea {
   color: white;
   border-radius: 8px;
   padding: 0 0.5rem;
-
 }
 
 @media screen and (min-width: 900px) {
