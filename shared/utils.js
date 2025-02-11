@@ -51,13 +51,7 @@ export const navData = () => ({
   },
 
   async signout(redirect) {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      console.error(error);
-      alert("Oops, something went wrong. Check the console for errors.");
-      return;
-    }
-
+    await supabase.auth.signOut();
     window.location = redirect;
   },
 });

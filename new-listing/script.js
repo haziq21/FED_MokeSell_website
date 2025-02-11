@@ -33,7 +33,7 @@ Alpine.data("newListing", () => ({
     const formData = new FormData(event.target);
 
     const files = [formData.get("thumbnail"), ...formData.getAll("images")];
-    const dataToInsert = {
+    let dataToInsert = {
       listed_by: userId,
       name: formData.get("name"),
       description: formData.get("description"),
