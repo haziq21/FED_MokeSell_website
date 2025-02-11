@@ -13,8 +13,7 @@ Alpine.data("signup", () => ({
     });
 
     if (error) {
-      console.error(error);
-      alert("Oops, something went wrong. Check the console for errors.");
+      alert(error.message);
       return;
     }
 
